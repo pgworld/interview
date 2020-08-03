@@ -1,6 +1,6 @@
 # **Computer Algorithm Interview**
-## Algorithmic Analysis
-### Correctness if Insertion Sort
+## 1. Algorithmic Analysis
+### 1.1. Correctness if Insertion Sort
 **Inductive Hypothesis** The loop invariant holds after the ith iteration.
 
 **Base case** The loop invariant holds before the first iteration.(initialization)
@@ -34,7 +34,7 @@
 
 자 이제 어떤 알고리즘이 잘 적용되는지 알았다면(inductive로 증명 가능한 알고리즘) 그것이 충분히 빠른지에 대해서 논의할 필요가 있을 것이다.
 
-### Analyzing Runtime
+### 1.2. Analyzing Runtime
 - Big O notation
 Big O notation의 수학적인 정의를 알아보기 전에, 직관적인 의미를 살펴보자. Big O notation은 upper bound라는 개념을 상상하면 수식도 헷갈일 일 없이 쉽게 외워질 것이다. upper bound라는게 무엇이냐? 아무리 커봐야 이거보단 크지않다는 것이다. "T(n) = O(g(n)) iff ∃c, n0 > 0 s.t. ∀n ≥ n0, 0 ≤ T(n) ≤ c⋅g(n)"이게 수학적인 정의이다.
 쉽게 말해서 흔히 우리가 insertion sort(다시 설명하자면 10개의 숫자가 있을 때, 앞에서부터 천천히 1개, 2개, 3개 ... 10개까지 sort를 수행하는 것이다. 즉 i번째 iteration에서는 i번째까지는 sorting이 되었다는 것! 이때 sort를 하는 방법은 i번째에서 새로운 숫자가 들어왔을 때, 적당한 그 친구의 위치로 그 숫자를 넣어주는 것)의 수행시간이 O(n^2)이라고 하는데, Big O notation으로 나타내면 O(n^3)일 수도 있고, O(n^4)일 수도 있다는 것이다.
@@ -51,3 +51,13 @@ Big O notation의 수학적인 정의를 알아보기 전에, 직관적인 의�
 - 여기서 헷갈리면 안되는 것
 worst case, best case의 경우와 아까 말했던 upper bound, lower bound를 헷갈리면 안된다. "insertion sort는 운 존나 좋을 땐 n만큼 시간 걸리는데, 그러면 Ω(n^2)이라고 하면 안되는거 아님? 아무리 작아봐야 n^2보다 작지는 않다며?"라고 이야기하면 뒤진다. 그냥 Big O notation과 Big Ω notation은 복잡한 수식을 간단하게(근사해서) 나타내는 하나의 "표현"일 뿐이다. 그 표현을 빌려서 우리는 알고리즘의 수행시간을 나타내는 것일 뿐이고. "그러면 무조건 Big Θ notation은 존재하는거 아냐? 존재하지 않을 수도 있는 경우는 뭐임?"이라고 질문한다면 아주 간단한 반례를 하나 들 수 있을 것이다. 만약 x가 홀수일 때는 x, x가 짝수일 때는 x^2가 걸리는 알고리즘이 있다고 가정하자. 이러한 알고리즘은 정의에 의하여 O(n^2)이고 Ω(n)일 것이다. 그렇다면 어떻게 되는가? Big Θ notation은 존재하지 않게 될 것이다.
 
+## 2. Divide and Conquer
+### 2.1. Analyzing Runtime
+다른거 다 알 필요없다. 다른건 그냥 tree 이용해서 하는 방법(n(tree 너비)  * logn(tree 높이))과 수학적인 방법이 있는데, master method쓰면 그냥 다 된다.
+
+- master method
+Suppose T(n) = a⋅T(n/b) + O(n^d). The Master method states:
+
+T(n) = O(n^d logn)   if a = b^d
+       O(n^d)        if a < b^d
+       O(n^log_b(a)) if a > b^d
