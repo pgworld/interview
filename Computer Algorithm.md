@@ -57,7 +57,8 @@ worst case, best case의 경우와 아까 말했던 upper bound, lower bound를 
 
 - master method
 Suppose T(n) = a⋅T(n/b) + O(n^d). The Master method states:
-
+```
 T(n) = O(n^d logn)   if a = b^d
        O(n^d)        if a < b^d
        O(n^log_b(a)) if a > b^d
+```
