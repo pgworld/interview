@@ -63,3 +63,6 @@ T(n) = O(n^d logn)   if a = b^d
        O(n^log_b(a)) if a > b^d
 ```
 이거 외우기 힘들면 그냥 면접볼 때 포스트잇에 적어놓고 노트북에 붙여놓자.
+
+### 2.2. Linear-Time Selection
+미안하다 이거 한시간동안 봤는데 이해 못했다.
