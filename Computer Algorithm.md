@@ -66,3 +66,15 @@ T(n) = O(n^d logn)   if a = b^d
 
 ### 2.2. Linear-Time Selection
 미안하다 이거 한시간동안 봤는데 이해 못했다.
+
+## 3. Linear Time Sorting
+
+### 3.1. comparison-based sorting algorithms
+비교를 기반으로 한 알고리즘은 아무리 잘 짜도 최소 O(nlogn) 시간을 필요로 하게 된다. 그 이유는 decision tree의 노드 수는 n!이고 해당 트리의 최소 depth는 log(n!)이 된다. 이때 O(log(n!)) = O(nlogn)이므로 최소 nlogn의 시간을 필요로 하게 된다.
+
+### 3.2. Linear Time Sorting
+- Counting Sort
+- Bucket Sort
+- Radix Sort
+
+## 4. Randomized Algorithms
