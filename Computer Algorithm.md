@@ -117,6 +117,7 @@ U는 가능한 모든 key의 경우의 수라고 생각하면 된다. 예를 들
 
 ## 7. Graph
 ### 7.0. Simple Question
+- DFS, BFS?
 - What is Topological Ordering?
 - What is Bipartite Graph?
 - What is SCC(Strongly Connected Components)?
@@ -134,3 +135,31 @@ U는 가능한 모든 key의 경우의 수라고 생각하면 된다. 예를 들
     - 분할 정복
       - 부분 문제는 서로 중복되지 않는다
       - Memoization 기법을 사용하지 않는다.
+### 8.1. Bellman-Ford Algorithm
+최단 경로를 찾는 알고리즘. 이건 그림 한번 보면 이해될 것 같긴한데(https://docs.google.com/presentation/d/1NMADbRbELNZoZaqI466w86-CL2EgzzQfVM3vUEXB0Q0/edit#slide=id.g24bd18724f_0_2472) 이렇게 지엽적인 내용을 묻지는 않을 것 같음. 결국은 이전의 결과를 memoization해서 그 다음에 이용한다는 것.
+
+### 8.2. Floyd-Warshall
+이건 벨만포드와 비슷한데 엣지의 웨이트가 음수일 때 사용한다. 이건 행렬을 두개 그려야해서 문제 풀어라고 나오지는 않을 듯. 우리 시험 때도 이거 안나왔음.
+
+### 8.3. Knapsack
+가방에 최대한 물건을 담는 알고리즘. 문제를 푸는데 짧게 걸리는 문제가 아니라서 단지 가방의 최대 한도 무게까지 하나하나 늘려가면서 그 전의 결과를 저장하고 그 다음에 조금씩 한도 무게를 목표 한도 무게까지 증가시키면서 물건을 바꿔넣는 방식으로 알고리즘이 진행된다.
+
+## 9. Greedy Algorithm
+### 9.1. What is Greedy Algorithm?
+미리 정한 기준에 따라서 매번 가장 좋아보이는 답을 선택하는 알고리즘. 근시안적으로 해를 구함.
+### 9.2. Minimum Spanning Trees
+그래프 내의 모든 정점을 최소의 비용으로 연결하는 트리. greedy algorithm을 이용해서 MST를 구성하기 위해서는 하나의 lemma가 필요하다. lemma는 다음과 같다.(이 lemma는 cut property라고 한다. https://daily-life-of-bsh.tistory.com/39)
+```
+그래프 G의 MST의 엣지의 집합 T에 대하여 T의 부분집합 A가 있다고 가정하자.(이때 A는 graph cut에 의해 생겨난 edge set이다.) 이때 G에서 A를 제외한 edge 중에서 가장 웨이트가 낮은 엣지는 MST에 포함된다.
+```
+### 9.3. Prim's Algorithm
+진짜 완전 탐욕적인 알고리즘. 어떤 노드를 선택해서 거기서 출발해가지고 가장 웨이트 작은 쪽으로만 가면서 루프만 안생기게(루프가 생기면 트리가 아니니까) 트리를 구성한다. 그걸 리턴한다.
+
+### 9.4. Kruskal's Algorithm
+위에서 언급했던 lemma를 여실히 사용해버리는 알고리즘. 그림을 보면 쉽게 이해가 된다. 묶음을 만들어나간다고 생각하면 쉬울듯. (https://docs.google.com/presentation/d/1-PNLi9UcHUXX_XjN2pOfJCVZFEGNQvjgy5RBYtrROio/edit#slide=id.g40119670e5_0_551)
+
+## 10. NP, P problem(면접에 나온다면 앞의 것들보다 이게 나올 가능성 농후)
+
+## 11. Minimum Cut
+### 11.1. Karger's Algorithm
+### 11.2. Ford-Fulkerson Algorithm
