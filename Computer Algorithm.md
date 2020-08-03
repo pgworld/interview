@@ -148,7 +148,7 @@ U는 가능한 모든 key의 경우의 수라고 생각하면 된다. 예를 들
 ### 9.1. What is Greedy Algorithm?
 미리 정한 기준에 따라서 매번 가장 좋아보이는 답을 선택하는 알고리즘. 근시안적으로 해를 구함.
 ### 9.2. Minimum Spanning Trees
-그래프 내의 모든 정점을 최소의 비용으로 연결하는 트리. greedy algorithm을 이용해서 MST를 구성하기 위해서는 하나의 lemma가 필요하다. lemma는 다음과 같다.(이 lemma는 cut property라고 한다. https://daily-life-of-bsh.tistory.com/39)
+그래프 내의 모든 정점을 최소의 비용으로 연결하는 트리. greedy algorithm을 이용해서 MST를 구성하기 위해서는 하나의 lemma가 필요하다. lemma는 다음과 같다.(이 lemma는 cut property라고 한다. https://daily-life-of-bsh.tistory.com/39) (https://1ambda.github.io/algorithm/algorithm-part2-1/)
 ```
 그래프 G의 MST의 엣지의 집합 T에 대하여 T의 부분집합 A가 있다고 가정하자.(이때 A는 graph cut에 의해 생겨난 edge set이다.) 이때 G에서 A를 제외한 edge 중에서 가장 웨이트가 낮은 엣지는 MST에 포함된다.
 ```
