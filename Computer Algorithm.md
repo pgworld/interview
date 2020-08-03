@@ -78,3 +78,20 @@ T(n) = O(n^d logn)   if a = b^d
 - Radix Sort
 
 ## 4. Randomized Algorithms
+### 4.1. Concept
+- Good average-case behavior (평균적으로 좋은 성능을 보인다)
+- Getting exact answers with high probability (높은 확률로 제대로된 값을 뱉어낸다)
+- Getting answers that are close to the right answer (정답값에 가까운 값을 뱉어낸다)
+
+### 4.2. Monte Carlo vs. Las Vegas
+- **Las Vegas algorithms** guarantee correctness, but not runtime. We’ll focus on these algorithms today. (정답 맞추기 > 빨리 풀기)
+- **Monte Carlo algorithms** guarantee runtime, but not correctness. We’ll revisit this next week when we see Karger’s algorithm. (빨리 풀기 > 정답 맞추기, 그렇더라도 정답에 가까운 값을 가져옴)
+
+### 4.3. Bogo sort
+"Bogo"는 멍청이라는 뜻. 그냥 랜덤으로 숫자들 배열한다음에 정렬되어있는지 확인한다. worst case에서는 무한대의 시간이 걸릴 수도 있고, 기댓값은 O(n * n!)이다. (n이 곱해져 있는 이유는 정렬되어있는지 확인해야하니까)
+
+### 4.4. Quick sort
+그냥 pivot값을 랜덤으로 뽑음. 그냥 배열 중간에 있는거 가져오는거랑 무슨 차이냐? 라고 할 수 있는데, quick sort에서 중앙에 있는걸 가져왔는데 그게 항상 각 파티션에서 최대 혹은 최소값일 경우 worst case가 도출될 수 있다. 이러한 상황을 최소한으로 확률적으로 줄이기 위해 랜덤으로 뽑으면 더 좋다고 한다. (인풋에 의해서 좌우되지 않기 위해서!)
+
+### 4.5. Majority Element
+최빈값(여기서 말하는 최빈값은 단순히 많이 나오는 값이 아니라 을 가져오기 위해서 우리는 어떤 생각을 하는가? 각각의 값들의 빈도수를 구해서 빈도수가 가장 많은 것을 가져오면 되지 않을까? 라고 생각을 하곤 한다. 하지만 그렇게 되면 그것 역시 결국은 sort와 비슷한 작용을 하기때문에 nlogn의 시간을 필요로 하게 된다. 하지만 bogo sort의 컨셉을 사용하게 된다면 기대 시간 복잡도가 O(n)에 수렴하게 된다. 그냥 이렇게 생각하면 된다. 확률적으로 최빈값이니까 대충 찍었을 때 나오는 값이 최빈값일 확률이 굉장히 높지 않을까? 라는 컨셉에서 시작을 하면 된다.
