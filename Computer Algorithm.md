@@ -62,3 +62,4 @@ T(n) = O(n^d logn)   if a = b^d
        O(n^d)        if a < b^d
        O(n^log_b(a)) if a > b^d
 ```
+이거 외우기 힘들면 그냥 면접볼 때 포스트잇에 적어놓고 노트북에 붙여놓자.
